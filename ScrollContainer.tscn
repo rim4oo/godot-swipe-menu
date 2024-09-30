@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://eyvb5jqakjsw"]
+
+[ext_resource type="Texture2D" uid="uid://cnpnkwe658rt6" path="res://Textures/CardLevel2.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cd2nykcjtl4tm" path="res://Textures/CardLevel3.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ceensqsjbmmsr" path="res://Textures/CardLevel4.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bfy6384k42ovj" path="res://Textures/CardLevel1.png" id="4"]
+[ext_resource type="Script" path="res://ScrollContainer.gd" id="5"]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+clip_contents = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 1920
+theme_override_constants/margin_right = 1920
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 100
+
+[node name="CardMenu1" type="TextureRect" parent="CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4")
+
+[node name="CardMenu2" type="TextureRect" parent="CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1")
+
+[node name="CardMenu3" type="TextureRect" parent="CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="CardMenu4" type="TextureRect" parent="CenterContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3")
+
+[connection signal="gui_input" from="." to="." method="_on_ScrollContainer_gui_input"]
+[connection signal="scroll_ended" from="." to="." method="_on_scroll_ended"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qxkt483ruwjs"]
+
+[ext_resource type="PackedScene" uid="uid://eyvb5jqakjsw" path="res://ScrollContainer.tscn" id="2"]
+
+[node name="Node" type="Node"]
+
+[node name="ScrollContainer" parent="." instance=ExtResource("2")]
+offset_top = 158.0
+offset_bottom = -159.0
